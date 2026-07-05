@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeQuest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="scanlines" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#map" aria-label="CodeQuest home">
+        <span class="brand-mark">CQ</span>
+        <span>CodeQuest</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#map">Map</a>
+        <a href="#lesson">Lesson</a>
+        <a href="#leaderboard">Leaderboard</a>
+      </nav>
+      <button class="pixel-button small" id="themeToggle" type="button">LIGHT</button>
+    </header>
+
+    <main>
+      <section class="hero" id="map">
+        <div class="hero-copy">
+          <p class="eyebrow">8-bit coding adventure</p>
+          <h1>CodeQuest</h1>
+          <p>
+            Learn HTML, Java, and Python through short quests, instant feedback,
+            XP rewards, badges, streaks, and unlocked level paths.
+          </p>
+          <div class="stats-strip" aria-label="Player stats">
+            <span><strong id="xpValue">1280</strong> XP</span>
+            <span><strong id="streakValue">7</strong> Day Streak</span>
+            <span><strong>9</strong> Badges</span>
+          </div>
+        </div>
+        <div class="avatar-card" aria-label="Pixel avatar progress">
+          <div class="avatar">
+            <span class="avatar-eye left"></span>
+            <span class="avatar-eye right"></span>
+          </div>
+          <p>Player: Nova</p>
+          <div class="progress-mini">
+            <span style="width: 64%"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Level-select map</p>
+          <h2>Choose Your Track</h2>
+        </div>
+        <div class="tracks" id="tracks"></div>
+      </section>
+
+      <section class="section lesson-grid" id="lesson">
+        <div class="lesson-panel">
+          <p class="eyebrow" id="lessonTrack">HTML Quest 1</p>
+          <h2 id="lessonTitle">Build Your First Pixel Card</h2>
+          <p id="lessonBody">
+            Complete the card by adding a heading and button. Lessons are built
+            to take 5-10 minutes, then end with a compact challenge.
+          </p>
+          <div class="challenge-box">
+            <h3>Challenge</h3>
+            <p id="challengeText">Make the button text say START.</p>
+            <label for="answerInput">Quiz answer</label>
+            <input id="answerInput" type="text" placeholder="Type START" />
+            <button class="pixel-button" id="checkAnswer" type="button">CHECK</button>
+          </div>
+        </div>
+
+        <div class="editor-panel" aria-label="Live code editor">
+          <div class="editor-toolbar">
+            <span>LIVE EDITOR</span>
+            <button class="pixel-button small" id="runCode" type="button">RUN</button>
+          </div>
+          <textarea id="codeEditor" spellcheck="false"><article class="card">
+  <h2>Pixel Hero</h2>
+  <button>START</button>
+</article></textarea>
+          <iframe id="preview" title="Code preview"></iframe>
+        </div>
+      </section>
+
+      <section class="section reward-section">
+        <div>
+          <p class="eyebrow">Certificates</p>
+          <h2>Level Rewards</h2>
+          <p>
+            Finish each difficulty tier to unlock a pixel trophy certificate and
+            the next quest node on the map.
+          </p>
+        </div>
+        <div class="badges" aria-label="Earned badges">
+          <span>HTML I</span>
+          <span>JAVA I</span>
+          <span>PY I</span>
+          <span class="locked">PY III</span>
+        </div>
+      </section>
+
+      <section class="section leaderboard" id="leaderboard">
+        <div class="section-heading">
+          <p class="eyebrow">Friendly competition</p>
+          <h2>Leaderboard</h2>
+        </div>
+        <ol>
+          <li><span>ByteBard</span><strong>9240 XP</strong></li>
+          <li><span>LoopLuna</span><strong>8820 XP</strong></li>
+          <li><span>Nova</span><strong>7680 XP</strong></li>
+          <li><span>PixelPat</span><strong>7030 XP</strong></li>
+        </ol>
+      </section>
+    </main>
+
+    <div class="modal hidden" id="feedbackModal" role="dialog" aria-modal="true" aria-live="polite">
+      <div class="modal-panel">
+        <h2 id="feedbackTitle">SUCCESS!</h2>
+        <p id="feedbackMessage">Quest complete.</p>
+        <button class="pixel-button" id="closeFeedback" type="button">CONTINUE</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
